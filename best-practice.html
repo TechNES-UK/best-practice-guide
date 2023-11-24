@@ -1,0 +1,1406 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Executive Summary &#8212; Techworks Best Practices in AI v0.4.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/haiku.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to the Techworks Best Practices in AI Guide" href="index.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Techworks Best Practices in AI v0.4.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Executive Summary</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to the Techworks Best Practices in AI Guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <p>This document is the best practices in AI guide for electronic systems engineers
+produced by the Best Practices in AI workstream at TechNES. This guide is
+currently maintained in <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> on
+<a class="reference external" href="https://github.com/TechNES-UK/best-practice-guide/">GitHub</a>.</p>
+<p>While we maintain our core document in Sphinx, we’re aware that this may not fit
+everybody’s day-to-day workflows. We therefore currently publish versions of
+this document in the following formats:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://technes-uk.github.io/best-practice-guide">Online</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/TechNES-UK/best-practice-guide/gh-pages/best-practices-guide.pdf">PDF</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TechNES-UK/best-practice-guide/raw/gh-pages/best-practices-guide.docx">docx</a></p></li>
+</ul>
+<p>We welcome any and all contributors to this guide. You don’t necessarily need to
+author content to contribute - feeding back on the guide is a
+valuable contribution. We current coordinate group activities via
+<a class="reference external" href="https://basecamp.com/">Basecamp</a>. If you want to get involved then:</p>
+<ul class="simple">
+<li><p>Get <a class="reference external" href="mailto:william&#46;jones&#37;&#52;&#48;embecosm&#46;com">in touch</a></p></li>
+</ul>
+<p>We’re also very happy to take feedback on this guide directly. You can do this
+by:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="mailto:william&#46;jones&#37;&#52;&#48;embecosm&#46;com">Sending us</a> your comments</p></li>
+<li><p>Opening an <a class="reference external" href="https://github.com/TechNES-UK/best-practice-guide/issues/">issue</a>
+or a
+<a class="reference external" href="https://github.com/TechNES-UK/best-practice-guide/pulls/">pull request</a>
+on Github.</p></li>
+</ul>
+<section id="executive-summary">
+<span id="id1"></span><h1>Executive Summary<a class="headerlink" href="#executive-summary" title="Permalink to this headline">¶</a></h1>
+<p>Artificial Intelligence (AI) and Machine Learning (ML) technologies are key to
+many modern engineering projects due to their ability to solve many problems
+that are difficult or impossible with other methods. While most engineers will
+find themselves enjoying a significant overlap between these techniques and
+their existing skill set, they are also liable to find that AI and ML is its own
+field with its own unique demands and (often hidden) pitfalls. While there are
+many resources available for self teaching, it is generally assumed the
+practitioner is either an absolute beginner to engineering, or already a
+seasoned expert in AI and ML. In this document, we provide a practical guide to
+AI and ML for electronic systems engineers who already have a strong base of
+knowledge in electronic systems but no specialized expertise. This guide will be
+practice focused, with the goal of helping engineers to make good decisions and
+avoid problems.</p>
+<p>The guide will cover, in order:</p>
+<ul class="simple">
+<li><p>Should I Use AI?</p></li>
+<li><p>Defining the Project</p></li>
+<li><p>Collecting Data</p></li>
+<li><p>Training your AI Application</p></li>
+<li><p>Deploying your AI Application</p></li>
+</ul>
+</section>
+<section id="using-this-guide">
+<span id="id2"></span><h1>Using this Guide<a class="headerlink" href="#using-this-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide is laid out as a series of steps taking you from conceptualizing your
+AI application through to deploying it in the real world. These steps are broken
+into sections, and set out in the order they should be initially considered.
+It’s strongly suggested you don’t “skip ahead” to later steps from earlier ones.
+However, it is expected reviewing later sections may prompt you to reevaluate
+earlier steps and return to previous decisions.</p>
+<p>Each step discusses a problem to be solved, what needs to be done to solve it,
+and what evidence needs to be provided to support this. The steps are enumerated
+in a table available in each section, with details on each entry available
+further down the document. The table is to be filled in as the steps are worked
+through and lists 3 columns. The first lists the name of the requirement. The
+second is for recording the evidence supporting the fulfillment of the
+requirement, and the third is a checkbox to note when the requirement has been
+completed. An example table with the first requirement filled out is below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 56%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Example requirement 1</p></td>
+<td><p>Example Risk Assessment.pdf,
+Example document.pdf</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Example requirement 2</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Not every part of every step will need to be fulfilled for every application.
+Different applications may require different approaches. We discuss some
+recurring issues that many engineers will have to deal with these below.</p>
+<section id="application-specific-requirements">
+<span id="id3"></span><h2>Application Specific Requirements<a class="headerlink" href="#application-specific-requirements" title="Permalink to this headline">¶</a></h2>
+<section id="ai-risk">
+<span id="id4"></span><h3>AI Risk<a class="headerlink" href="#ai-risk" title="Permalink to this headline">¶</a></h3>
+<p>Direct regulation of AI in the EU is tending to a risk based approach based on
+the harm than an AI application poses to people. Applications are classified
+into risk categories, and those that pose a high risk are to be subject to more
+stringent requirements. These categories are currently:</p>
+<ul class="simple">
+<li><p>Unacceptable risk. Applications that are a clear threat to the safety,
+livelihoods or rights of people.</p></li>
+<li><p>High risk. Applications that are critical to the safety or wellbeing of
+people, that require special mitigations to adequately cover the risks they
+pose</p></li>
+<li><p>Limited risk. Applications with lower impacts to safety or wellbeing, but
+which still require some level of mitigation</p></li>
+<li><p>Minimal or no risk. Applications with minimal to zero risk.</p></li>
+</ul>
+<p>Providing guidance on any upcoming or current legislation is out of the scope of
+this guide. However, this categorization of the risk that AI applications pose
+is a useful tool for discussing best engineering practices. These risk levels
+will recur in this guide, and we will refer to them as AI Risk.</p>
+</section>
+<section id="data-protection">
+<span id="id5"></span><h3>Data Protection<a class="headerlink" href="#data-protection" title="Permalink to this headline">¶</a></h3>
+<p>AI models are data driven. This leaves them significantly subject to data
+protection regulation, especially GDPR. According to GDPR, if you process data,
+you have to do so according to seven protection and accountability principles:</p>
+<ul class="simple">
+<li><p>Lawfulness, fairness and transparency — Processing must be lawful, fair, and
+transparent to the data subject.</p></li>
+<li><p>Purpose limitation — You must process data for the legitimate purposes
+specified explicitly to the data subject when you collected it.</p></li>
+<li><p>Data minimization — You should collect and process only as much data as
+absolutely necessary for the purposes specified.</p></li>
+<li><p>Accuracy — You must keep personal data accurate and up to date.</p></li>
+<li><p>Storage limitation — You may only store personally identifying data for as
+long as necessary for the specified purpose.</p></li>
+<li><p>Integrity and confidentiality — Processing must be done in such a way as to
+ensure appropriate security, integrity, and confidentiality (e.g. by using
+encryption).</p></li>
+<li><p>Accountability — The data controller is responsible for being able to
+demonstrate GDPR compliance with all of these principles.</p></li>
+</ul>
+<p>There are also certain categories of data that must be given special
+consideration. Providing guidance on legislation remains out of the scope of
+this guide. However, once again, the ideas put forward in GDPR are important in
+framing the discussion of best engineering practices, and will recur in this
+guide.</p>
+</section>
+<section id="safety-security-and-robustness">
+<span id="id6"></span><h3>Safety, Security and Robustness<a class="headerlink" href="#safety-security-and-robustness" title="Permalink to this headline">¶</a></h3>
+<p>A core requirement of any system is that it functions correctly, both in
+conditions of normal use, as well as conditions of misuse (intentional or
+otherwise), or other adverse conditions. An AI system should be:</p>
+<ul class="simple">
+<li><p>Safe: either functioning correctly or failing safely in all conditions</p></li>
+<li><p>Secure: resilient against misuse or abuse (intentionally or otherwise), and</p></li>
+<li><p>Robust: ensuring functionality in as wide a range of conditions as possible</p></li>
+</ul>
+<p>While the need to meet these challenges is not unique to AI systems, AI systems
+bring several unique problems to each of these areas. For example:</p>
+<ul class="simple">
+<li><p>Safety is a continual challenge in AI systems that are fundamentally
+statistical. Guaranteeing safe behavior in the wide range of situations an
+automotive AI may encounter, for example, remains a continuous challenge.</p></li>
+<li><p>AI models present unique attack surfaces that must be secured. For example,
+in many situations, models will leak information about the data that they were
+trained on.</p></li>
+<li><p>Similarly, AI models struggle to robustly deal with novel data outside of
+their training set. This can both cause problems in normal use, and be
+exploited by attackers.</p></li>
+</ul>
+<p>Safety, security and robustness will be important ideas throughout this document.</p>
+</section>
+<section id="transparency-and-explainability">
+<span id="id7"></span><h3>Transparency and Explainability<a class="headerlink" href="#transparency-and-explainability" title="Permalink to this headline">¶</a></h3>
+<p>It is important in many cases that we can understand how our systems function.
+This imperative should be familiar to any electronic systems engineer, through
+the value of clear code and documentation. We use two terms to describe these
+requirements:</p>
+<ul class="simple">
+<li><p>Transparency: the communication of appropriate information about an AI system
+to relevant people (for example, information on how, when, and for which
+purposes an AI system is being used), and</p></li>
+<li><p>Explainability: the extent to which it is possible for relevant parties to
+access, interpret and understand the decision-making processes of an AI system</p></li>
+</ul>
+<p>Many AI systems are uniquely troublesome in these respects. Many common methods,
+such as Neural Networks are effectively “black boxes”. These methods provide a
+solution, but through a means that is ultimately not human interpretable.</p>
+</section>
+<section id="fairness">
+<span id="id8"></span><h3>Fairness<a class="headerlink" href="#fairness" title="Permalink to this headline">¶</a></h3>
+<p>Fairness is another core requirement of any system, especially in light of the
+above ideas of transparency and explainability. By fairness, we mean a system
+that:</p>
+<ul class="simple">
+<li><p>Does not undermine the legal rights of individuals or organizations,
+discriminate unfairly against individuals or create unfair market outcomes.</p></li>
+</ul>
+<p>Fairness is a challenge in AI systems that learn from data. The decisions these
+systems make are a reflection of the patterns in the data they are trained on.
+If the data is biased, the systems trained on them will also be biased. This has
+been proven expensively and at length in the real world, for example through
+attempts at creating <a class="reference external" href="https://www.technologyreview.com/2019/01/21/137783/algorithms-criminal-justice-ai/">criminal justice AI</a> or
+<a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G">hiring AI</a>.</p>
+</section>
+<section id="accountability-and-governance">
+<span id="id9"></span><h3>Accountability and Governance<a class="headerlink" href="#accountability-and-governance" title="Permalink to this headline">¶</a></h3>
+<p>Any system that has the potential to cause harm requires oversight. Any AI
+system will therefore require systems of:</p>
+<ul class="simple">
+<li><p>Governance, a framework for managing the development, deployment and operation
+of AI</p></li>
+<li><p>Accountability, clear lines of responsibility for all aspects of the AI
+applications</p></li>
+</ul>
+<p>The full scope of requirements is unlikely to be fully addressed by engineering.
+Nonetheless, these principles are important in the greater context of the AI
+application, and will be an important part of development.</p>
+</section>
+<section id="contestability-and-redress">
+<span id="id10"></span><h3>Contestability and Redress<a class="headerlink" href="#contestability-and-redress" title="Permalink to this headline">¶</a></h3>
+<p>Any system that has the potential to cause harm to people also requires ways for
+this harm to be recognised and reversed. Any such AI system will therefore
+require systems of:</p>
+<ul class="simple">
+<li><p>Contestability, those who may be adversely affected must have a route to
+contest decisions or outcomes</p></li>
+<li><p>Redress, there must be a system in place to assess these concerns, and redress
+the affected party when necessary</p></li>
+</ul>
+<p>The full scope of requirements is unlikely to be fully addressed by engineering.
+Nonetheless, these principles are important in the greater context of the AI
+application, and will be an important part of development.</p>
+</section>
+</section>
+</section>
+<section id="should-i-use-ai">
+<span id="id11"></span><h1>Should I Use AI?<a class="headerlink" href="#should-i-use-ai" title="Permalink to this headline">¶</a></h1>
+<p>Developing an AI application can present significant challenges. Collection of
+data, testing and validation are challenges. As seen in the previous section,
+many applications of AI will come with special requirements that can be a
+challenge in themselves. To address this, the very first step in this guide is
+to be able answer the following: should I use AI to solve my problem? We break
+this problem down into two parts:</p>
+<ul class="simple">
+<li><p>What is the engineering case for using AI to solve the problem, over other
+approaches?</p></li>
+<li><p>Does the problem touch on any application or data areas that may effectively
+prohibit development?</p>
+<ul>
+<li><p>What is the risk that the project falls into the unacceptable AI Risk
+category?</p></li>
+<li><p>What is the risk that the project makes use of problematic data?</p></li>
+</ul>
+</li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#evaluate-engineering-case"><span class="std std-ref">Evaluate Engineering Case</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#assess-unacceptable-ai-risk"><span class="std std-ref">Assess Unacceptable AI Risk</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#assess-problematic-data-risk"><span class="std std-ref">Assess Problematic Data Risk</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="defining-the-project">
+<span id="id12"></span><h1>Defining the Project<a class="headerlink" href="#defining-the-project" title="Permalink to this headline">¶</a></h1>
+<p>In the previous step we worked on an engineering case for AI in our project. In
+this step, we will take the first step in realizing our project by setting the
+goals and bounds of the project. There are three steps to complete in this
+section:</p>
+<ul class="simple">
+<li><p>Defining goals and metrics for success</p></li>
+<li><p>Defining limitations and boundaries on the project</p></li>
+<li><p>Completing a risk assessment of the project as a whole</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#define-goals-and-metrics"><span class="std std-ref">Define Goals and Metrics</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#define-limitations-and-boundaries"><span class="std std-ref">Define Limitations and Boundaries</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#complete-a-project-risk-assessment"><span class="std std-ref">Complete a Project Risk Assessment</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="collecting-data">
+<span id="id13"></span><h1>Collecting Data<a class="headerlink" href="#collecting-data" title="Permalink to this headline">¶</a></h1>
+<p>In the previous step, we defined the scope of our project. In this step, we move
+on to the first part of the practical engineering of our AI project, collecting
+the data. It is a core requirement of any AI application that it is data driven.
+This means that some data will need to be collected, or at the very least,
+processed. It’s very important to get this right, as the strength of the data
+will have a strong effect on the efficacy of training and deploying our AI
+application. We set out a number of steps for this section, but our primary
+challenges are:</p>
+<ul class="simple">
+<li><p>Making sure the data we’re is collecting useful, truthful, and effective data</p></li>
+<li><p>Making sure we transform our raw data into a form that can effectively
+utilized by AI algorithms</p></li>
+<li><p>Making sure our infrastructure for collection, storage, and access is
+appropriate and robust</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#creating-and-collecting-your-data-set"><span class="std std-ref">Creating and Collecting your Data Set</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#version-control-ci-cd-for-data"><span class="std std-ref">Version Control, CI/CD for Data</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#documentation"><span class="std std-ref">Documentation</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#data-exploration"><span class="std std-ref">Data Exploration</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cleaning-your-data"><span class="std std-ref">Cleaning your Data</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#validation-and-testing"><span class="std std-ref">Validation and Testing</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scaling-and-automation-data-collection"><span class="std std-ref">Scaling and Automation: Data Collection</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scaling-and-automation-data-storage"><span class="std std-ref">Scaling and Automation: Data Storage</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scaling-and-automation-data-access"><span class="std std-ref">Scaling and Automation: Data Access</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="training-your-ai-application">
+<span id="id14"></span><h1>Training Your AI Application<a class="headerlink" href="#training-your-ai-application" title="Permalink to this headline">¶</a></h1>
+<p>In the previous step, we collected the data for our AI project. In this step,
+we will make use of it by using it to train an AI algorithm of our choice to
+meet the goals of our project. This is also the step where systematic problems
+from decisions in earlier steps are likely to start manifesting in force. We
+strongly suggest that readers don’t hesitate to revisit earlier decisions at
+this stage if they prove to be unfruitful. Once again, we set out a number of
+steps for this section, but our primary challenges are:</p>
+<ul class="simple">
+<li><p>Establishing which AI approach we’re going to use</p></li>
+<li><p>Engineering a pipeline to train our approach in the best possible way</p></li>
+<li><p>Building confidence that this training results in an AI algorithm that does
+all the things it should, and none of the things it shouldn’t</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#choosing-your-ai-approach"><span class="std std-ref">Choosing Your AI approach</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#version-control-ci-cd-training"><span class="std std-ref">Version Control, CI/CD, Training</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#documentation-and-logging-training"><span class="std std-ref">Documentation and Logging, Training</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#data-pre-processing"><span class="std std-ref">Data Pre-processing</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#training-infrastructure"><span class="std std-ref">Training Infrastructure</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#creating-a-training-process"><span class="std std-ref">Creating a Training Process</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#testing-and-validation-training"><span class="std std-ref">Testing and Validation, Training</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#exploring-outcomes-and-biases"><span class="std std-ref">Exploring Outcomes and Biases</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scaling-and-automation-training-pipeline"><span class="std std-ref">Scaling and Automation: Training Pipeline</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deploying-your-ai-application">
+<span id="id15"></span><h1>Deploying your AI Application<a class="headerlink" href="#deploying-your-ai-application" title="Permalink to this headline">¶</a></h1>
+<p>After training our AI application, we can finally deploy it and (hopefully)
+achieve the goals set out in our previous steps. This step will likely represent
+a welcome return to familiarity for the professional engineer, as the process
+for deploying an AI application is fairly similar to that of deploying any other
+software application. Our process will proceed broadly in three steps:</p>
+<ul class="simple">
+<li><p>Preparing our trained the model for a live environment</p></li>
+<li><p>Engineering a process for deployment and model updating</p></li>
+<li><p>Setting up continuous monitoring for our model</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Evidence</p></th>
+<th class="head"><p>Complete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#version-control-ci-cd-deployment"><span class="std std-ref">Version Control, CI/CD, Deployment</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#documentation-and-logging-deployment"><span class="std std-ref">Documentation and Logging, Deployment</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#preparing-a-trained-model"><span class="std std-ref">Preparing a Trained Model</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#deployment-infrastructure"><span class="std std-ref">Deployment Infrastructure</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#deploying-your-model"><span class="std std-ref">Deploying Your Model</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#testing-and-validation-deployment"><span class="std std-ref">Testing and Validation, Deployment</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#model-monitoring"><span class="std std-ref">Model Monitoring</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scaling-and-automation-deployment-pipeline"><span class="std std-ref">Scaling and Automation: Deployment Pipeline</span></a></p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="task-list">
+<span id="id16"></span><h1>Task List<a class="headerlink" href="#task-list" title="Permalink to this headline">¶</a></h1>
+<section id="should-i-use-ai-task-list">
+<span id="id17"></span><h2><a class="reference internal" href="#should-i-use-ai"><span class="std std-ref">Should I Use AI?</span></a><a class="headerlink" href="#should-i-use-ai-task-list" title="Permalink to this headline">¶</a></h2>
+<section id="evaluate-engineering-case">
+<span id="id18"></span><h3><a class="reference internal" href="#should-i-use-ai"><span class="std std-ref">Evaluate Engineering Case</span></a><a class="headerlink" href="#evaluate-engineering-case" title="Permalink to this headline">¶</a></h3>
+<p>As we discussed  previously, while AI is a powerful tool in many applications,
+it may not be immediately appropriate for the problem you are trying to solve.
+This step requires you to enumerate and assess what available alternative
+approaches to solving the problem, and how they compare to an AI solution. This
+isn’t intended as a deep dive into the details and risks of your prospective
+systems, but a high level check that this engineering approach is right for you.</p>
+<p>This step is fairly short, and to complete it, you simply need to list the
+viable approaches to solving your problem (including the AI approach), and
+compare them. This should include solutions that might not take a data driven
+approach, as well as data driven approaches that don’t use learning, for
+example, heuristic based approaches. The choice of how to compare these will be
+dictated by your use case, but you’re likely to want to consider the following:</p>
+<ul class="simple">
+<li><p>What are the financial burdens of each case?</p></li>
+<li><p>What are the engineering burdens of each case?</p></li>
+<li><p>What are the legal burdens?</p></li>
+</ul>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<p>In this example, we work through the engineering case for a phishing email
+detector. There is an
+<a class="reference internal" href="#example-engineering"><span class="std std-ref">example engineering case document</span></a>, with a
+discussion of the problem below.</p>
+<p>Our use case is a filter to reduce the success rate of phishing emails. As an
+example of how we might think about this, we consider three alternative internal
+solutions:</p>
+<ul class="simple">
+<li><p>A non data driven (or minimally data driven) approach. All emails that are
+from external email addresses automatically have a header attached warning
+employees that the sender may not be trustworthy, and to apply caution in
+respect of the contents.</p></li>
+<li><p>A data driven approach that uses engineer designed heuristics instead of a
+learning approach. For example, emails are filtered if they:</p>
+<ul>
+<li><p>Are from a list of known “bad” addresses</p></li>
+<li><p>Contain too many known “bad” words, e.g. “low interest rate loans”
+Has “.exe” attachments</p></li>
+</ul>
+</li>
+<li><p>An AI approach that learns from a corpus of previous emails to read an email’s
+content, and classifies it as phishing, or not phishing.</p></li>
+</ul>
+<p>The respective advantages of each approach are:</p>
+<ul class="simple">
+<li><p>The non data driven approach is simple to implement, requires few resources to
+execute, and is simple and cheap to maintain. It will never incorrectly filter
+out legitimate emails, as it passes the burden of decision making to employees
+(with extra information).</p></li>
+<li><p>The heuristic approach is also fairly simple to implement, and requires few
+resources to execute. It is also very easy to tune for specific requirements
+(e.g. never do this, always do this).</p></li>
+<li><p>The AI approach will likely have the best performance at identifying spam
+emails, if trained on sufficient data. It is also likely to adapt fairly well
+to changes in phishing approaches over time, if continually fed with data.</p></li>
+</ul>
+<p>The disadvantages of each are:</p>
+<ul class="simple">
+<li><p>The non-data driven approach provides extra information, but the decision
+making ultimately places responsibility on the end user.</p></li>
+<li><p>The heuristic approach requires each rule to be created manually, scaling
+poorly to large scale problems. Creating effective heuristic rules that do not
+result in any real emails being filtered out is also likely to be challenging.
+Adapting to new phishing approaches is also likely to be a significant burden,
+requiring runes to be written or rewritten.</p></li>
+<li><p>The AI approach will need a large corpus of data to learn from which will
+have to be prepared appropriately. It will flag real emails incorrectly some
+of the time (no matter how well trained), and this may not be easy to fix.
+Adoption will require more data preparation and training.</p></li>
+</ul>
+<p>Picking the best approach (or approaches) to use depends on our context. In this
+particular example, our non-AI examples are significantly simpler to implement,
+and are likely to do better for small scale problems. Other conditions may also
+influence the decision. An organization of phishing-aware people that mostly
+communicate internally may hugely benefit from the first approach.</p>
+</section>
+</section>
+<section id="assess-unacceptable-ai-risk">
+<span id="id19"></span><h3><a class="reference internal" href="#should-i-use-ai"><span class="std std-ref">Assess Unacceptable AI Risk</span></a><a class="headerlink" href="#assess-unacceptable-ai-risk" title="Permalink to this headline">¶</a></h3>
+<p>In the Using This Guide section, we defined AI risk in several categories:
+Unacceptable, High, Limited, and Minimal. Before continuing any further in this
+guide, it is important to consider the risk that your project may fall into the
+Unacceptable category. These are applications that are a clear threat to the
+safety, livelihoods or rights of people, and are not suitable to be tackled with
+AI. Examples include:</p>
+<ul class="simple">
+<li><p>AI systems using subliminal techniques, or manipulative or deceptive
+techniques to distort behavior</p></li>
+<li><p>AI systems exploiting vulnerabilities of individuals or specific groups</p></li>
+<li><p>Biometric categorization systems based on sensitive attributes or
+characteristics</p></li>
+<li><p>AI systems used for social scoring or evaluating trustworthiness</p></li>
+<li><p>AI systems used for risk assessments predicting criminal or administrative
+offenses</p></li>
+<li><p>AI systems creating or expanding facial recognition databases through
+untargeted scraping</p></li>
+<li><p>AI systems inferring emotions in law enforcement, border management, the
+workplace, and education</p></li>
+</ul>
+<p>At this stage, you may not have fully fleshed out the scope of your application.
+Nonetheless, this initial assessment is important to pre-empt this risk. If you
+believe your application may fall into this category, discontinue further work
+on it until you have resolved this issue.</p>
+<p>To complete this step, complete a risk assessment on the harms your AI project
+may pose to the safety, livelihoods or rights of people.</p>
+<section id="id20">
+<h4>Examples<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="assess-problematic-data-risk">
+<span id="id21"></span><h3><a class="reference internal" href="#should-i-use-ai"><span class="std std-ref">Assess Problematic Data Risk</span></a><a class="headerlink" href="#assess-problematic-data-risk" title="Permalink to this headline">¶</a></h3>
+<p>Some types of data are subject to extra difficulties that will either require
+extra licensing, oversight, or may be effectively impracticable to collect. This
+section is about evaluating the risk that the data you are likely to wish to
+collect is available within the constraints of your business. Note that this
+section isn’t a dive into data collection requirements under GDPR, but a higher
+level feasibility check. Some examples of types of data that will be
+problematic:</p>
+<ul class="simple">
+<li><p>Criminal Conviction Data, only processable:</p>
+<ul>
+<li><p>under the control of official authority; or</p></li>
+<li><p>authorized by domestic law.</p></li>
+</ul>
+</li>
+<li><p>Data collected by experimenting on humans or animals</p>
+<ul>
+<li><p>requiring extra licensing and oversight</p></li>
+</ul>
+</li>
+<li><p>Data surrounding experimentation with infectious diseases</p></li>
+</ul>
+<p>The specifics of problematic data will depend on the domain the data is being
+collected in. At this stage, you may not have fully fleshed out the scope of
+your application. Nonetheless, you should, before proceeding further, assess the
+risk that this applies to you. If you believe your application may fall into
+this category, you should once again discontinue further work on it until you
+have resolved this issue.</p>
+<p>To complete this step, complete a risk assessment on potential problems
+surrounding the collection of the type of data you are likely to require.</p>
+<section id="id22">
+<h4>Examples<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="defining-the-project-task-list">
+<span id="id23"></span><h2><a class="reference internal" href="#defining-the-project"><span class="std std-ref">Defining the Project</span></a><a class="headerlink" href="#defining-the-project-task-list" title="Permalink to this headline">¶</a></h2>
+<section id="define-goals-and-metrics">
+<span id="id24"></span><h3><a class="reference internal" href="#defining-the-project"><span class="std std-ref">Define Goals and Metrics</span></a><a class="headerlink" href="#define-goals-and-metrics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="define-limitations-and-boundaries">
+<span id="id25"></span><h3><a class="reference internal" href="#defining-the-project"><span class="std std-ref">Define Limitations and Boundaries</span></a><a class="headerlink" href="#define-limitations-and-boundaries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="complete-a-project-risk-assessment">
+<span id="id26"></span><h3><a class="reference internal" href="#defining-the-project"><span class="std std-ref">Complete a Project Risk Assessment</span></a><a class="headerlink" href="#complete-a-project-risk-assessment" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="collecting-data-task-list">
+<span id="id27"></span><h2><a class="reference internal" href="#collecting-data"><span class="std std-ref">Collecting Data</span></a><a class="headerlink" href="#collecting-data-task-list" title="Permalink to this headline">¶</a></h2>
+<section id="creating-and-collecting-your-data-set">
+<span id="id28"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Creating and Collecting your Data Set</span></a><a class="headerlink" href="#creating-and-collecting-your-data-set" title="Permalink to this headline">¶</a></h3>
+<section id="defining-the-plan">
+<h4>Defining the Plan<a class="headerlink" href="#defining-the-plan" title="Permalink to this headline">¶</a></h4>
+<p>The first step in creating our AI application is to create and (with caveats)
+implement a plan to collect a dataset to drive your AI application. The plan
+will include:</p>
+<ul class="simple">
+<li><p>What data you are going to collect</p></li>
+<li><p>Where/whom you are going to collect it from</p></li>
+<li><p>How you are going to do this</p></li>
+</ul>
+<p>The best way to initially approach this is to approach it as you would any novel
+software problem: do not reinvent the wheel and never build anything yourself
+that you could fairly appropriate from somebody else. There are many free
+datasets for a wide range of problems publicly available. Observe what types of
+data others who are solving problems similar to you have collected, and what you
+can learn about the datasets they used. It may be appropriate in the first
+instance, if a suitable dataset exists, to initially use a public dataset and
+iterate. If you do use other datasets, do make sure you respect the licenses
+that may come with them.</p>
+<p>In most business cases, you will at some point end up collecting your own data.
+Even if you don’t, it’s important to be aware of what kind of data is desirable
+for AI and machine learning, and what kind of data is not. When looking at
+potential data, some key criteria to consider are:</p>
+<ul class="simple">
+<li><p>Accuracy</p>
+<ul>
+<li><p>Does the data accurately measure a quantity you are interested in?</p></li>
+<li><p>This sounds obvious, but not all data can be trusted. Data from asking human</p></li>
+<li><p>participants questions, for example, can be inaccurate and contradictory.</p></li>
+</ul>
+</li>
+<li><p>Completeness</p>
+<ul>
+<li><p>Does the dataset represent a complete view of all data points of interest?</p></li>
+<li><p>Does it have more data about some quantities than others? Should it?</p></li>
+<li><p>Your models cannot learn from examples that are not in the data</p></li>
+</ul>
+</li>
+<li><p>Relevance</p>
+<ul>
+<li><p>To what extent is the collected data relevant to the measure of interest?</p></li>
+<li><p>Including data that is only weakly relevant may cause more problems than it
+solves</p></li>
+</ul>
+</li>
+<li><p>Missingness</p>
+<ul>
+<li><p>Are there missing values in the data?</p></li>
+<li><p>Distinct from completeness. Completeness is about overall coverage,
+missingness is about which bits of your collected data are not present.</p></li>
+</ul>
+</li>
+<li><p>Timeliness</p>
+<ul>
+<li><p>Is the data still relevant now?</p></li>
+</ul>
+</li>
+<li><p>Subjectivity</p>
+<ul>
+<li><p>AI methods are fundamentally quantitative, and deal best with quantitative
+data</p></li>
+</ul>
+</li>
+<li><p>Attainability</p>
+<ul>
+<li><p>Can the data be realistically obtained (and in the quantities required)?</p></li>
+</ul>
+</li>
+<li><p>Standardization</p>
+<ul>
+<li><p>Is the data collectable/attainable in a standardized format amenable to
+computation</p></li>
+</ul>
+</li>
+</ul>
+<p>What data you intend to collect is likely to be very tightly tied to where you
+collect your data. The best source of data is usually the source that gives the
+best data by the criteria we list above. This is not always the only
+consideration though, it is also wise to consider:</p>
+<ul class="simple">
+<li><p>Licensing. This applies both if you’re using an existing dataset licensed by
+a third party (even a free one), or if your data might contain licensed work. As
+an example of the latter building a dataset of artwork may require you to
+consider the licenses of those artworks.</p></li>
+<li><p>Personal Data: classes of data (e.g., personal data) must be treated
+specially. More on this at the bottom of this section</p></li>
+<li><p>Special Cases: Depending on the data and end goal, you may be required to take
+additional steps in data collection. For example, data collected by
+experimenting on animals is likely to require extra licenses and oversight.</p></li>
+</ul>
+</section>
+<section id="implementing-the-plan">
+<h4>Implementing the Plan<a class="headerlink" href="#implementing-the-plan" title="Permalink to this headline">¶</a></h4>
+<p>We discussed supervised and unsupervised learning in the <a class="reference internal" href="#define-goals-and-metrics"><span class="std std-ref">Define Goals and
+Metrics</span></a> section. If you are dealing with a
+supervised learning problem (as is likely), the largest concern of data
+collection is how the data can be labeled. In a supervised learning application,
+we want to learn to predict some quantity from our data. To do that, we need
+examples which match our data and that quantity together. For example if we want
+an AI application that detects spam, we need to collect as data a set of emails,
+and divide them up into two categories - spam or not.</p>
+<p>Fundamentally, you have two choices of how to do this. Firstly, you can
+contrive a way to achieve this automatically. If you are predicting how sales
+from your website occur based on how people engage with it, it might be a fairly
+simple affair for you to match these two bits of information up. Otherwise, if
+you can’t contrive a way to do otherwise, the data must be labeled manually, by
+hand. For example, in a dataset of pictures of animals, the only way to
+effectively know what animal is present in the picture is to get a human to
+decide. In general, we wish to avoid this - for the purposes of this type of
+task, humans are expensive, prone to error and hard to scale.</p>
+<p>Other than this, the process of how you will collect your data is simply the
+practical realization of what you’ve set out in the previous steps. Your focus
+here is making the process as simple and replicable as possible. As a general
+rule, the more automated the process can be, the better. Automated collection
+processes scale better, and involving human factors in the collection process is
+usually an excellent way to introduce an extra set of errors. Automated data
+collection isn’t possible in every application though. If you do have to have
+people involved in your data collection process, try and work as hard as you can
+to maximize the consistency of the process for them.</p>
+<p>It’s worth saying that regardless of the initial choices you make, it’s likely
+you’ll revisit this step as you follow the other instructions and find out what
+works for you and what doesn’t. This is perfectly fine, and it’s much better
+initially to pick a dataset, make a start, and iterate, rather than trying to
+get it perfect the first time.</p>
+<p>The criteria to complete this step are:</p>
+<p>To create and implement (with exceptions, see below) a Data Collection Plan.
+This is a plan that details:</p>
+<ul class="simple">
+<li><p>What data you are going to collect</p></li>
+<li><p>Where/who you are going to collect it from</p></li>
+<li><p>How you are going to collect the data</p></li>
+<li><p>Any extra considerations</p></li>
+</ul>
+<p>What data you are going to collect should include a data blueprint, a sample of
+exactly what you think the data you are going to collect should look like. The
+where/who should include specific populations you can feasibly target. The How
+should be a plan of action to collect the data from the first step from the
+groups you defined in the second step including, where required, a plan for how
+the data is to be labeled.</p>
+<p>If your AI application is in the high AI Risk category, or you are dealing with
+personal data, some special considerations exist. Create this plan, but do not
+implement it until you have worked through the following:</p>
+<p>For high AI Risk applications:</p>
+<ul class="simple">
+<li><p>You will be required to provide adequate documentation around data collection,
+and log all data collection activity. You will also be required to have human
+oversight over the data collection process. Make sure you visit the
+Documentation and Logging section of the guide that covers these areas before
+collecting any data</p></li>
+<li><p>You have a duty to make sure the data you collect is of a high quality to
+minimize discriminatory outcomes. Make sure you visit the Data Exploration and
+Biases section of the guide before collecting data.</p></li>
+</ul>
+<p>For AI applications dealing with personal data:</p>
+<ul class="simple">
+<li><p>You must collect data according to GDPR regulation. This topic is expanded on
+in our Appendix on GDPR.</p></li>
+</ul>
+</section>
+<section id="id29">
+<h4>Examples<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<p>In this example, we work through the case of an oncologist looking to create an
+AI application to help other physicians detect the presence of tumors in a chest
+x-ray. There is an <cite>example data set creation document&lt;dataset_creation&gt;</cite>,
+and a description below:</p>
+<p>The data I, as our imaginary oncologist, will need for my application is a set
+of chest x-rays, and whether they contain cancer or not.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p>classification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x-ray0.png</p></td>
+<td><p>cancerous</p></td>
+</tr>
+<tr class="row-odd"><td><p>x-ray1.png</p></td>
+<td><p>non-cancerous</p></td>
+</tr>
+<tr class="row-even"><td><p>x-ray2.png</p></td>
+<td><p>cancerous</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>In respect to where I can find the data, a starting point is obviously the data
+that I can collect from my own patients. I may be able to get data from other
+patients from people in my professional network, or simply search online (there
+are several publicly available datasets on this particular topic).</p>
+<p>In respect of how I can go about collecting (and labeling) my data. I can get
+chest X-rays from the sources described above. To label them, I can use my own
+expert knowledge, and/or ask other physicians to also contribute to corroborate.</p>
+<p>In respect of extra considerations: I am working with personal health data. I’d
+likely need to obtain consent from the patients, must respect GDP, and may have
+additional requirements to fulfill in respect of my medical license, or an
+ethics board to satisfy. It’s likely that this application would also fall into
+a high AI Risk category, and be subject to extra requirements.</p>
+</section>
+</section>
+<section id="version-control-ci-cd-for-data">
+<span id="id30"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Version Control, CI/CD for Data</span></a><a class="headerlink" href="#version-control-ci-cd-for-data" title="Permalink to this headline">¶</a></h3>
+<p>Any electronic systems engineer should be familiar with version control. These
+ideas are just as important in developing AI applications as any other software
+product. In this step we explore:</p>
+<ul class="simple">
+<li><p>Version control systems for all data collection code</p></li>
+<li><p>Version control systems for all data collected</p></li>
+</ul>
+<p>Our reasons for developing version control for data collection code are the same
+as they would be for any other software project. We have similar requirements of
+the datasets we collect with this code. Just like our code, our data is not
+something we can consider static. Not only is it possible we will collect more,
+but our existing data may be reorganized, fixed, or updated.</p>
+<p>Version control for code is very well established, with a range of standard free
+tools (e.g. Git, Mercurial, Subversion) available. Version control of data
+requires a little more work. The standard tools used for code control are only
+appropriate for a (relatively) small number of small files, tracking a
+relatively small number of changes. Many datasets will not meet these criteria.
+In these cases we can either extend existing version control with “large file”
+control, or with an entirely separate data version control system. Free and Open
+Source examples of the above are Git LFS and Data Version Control respectively.</p>
+<p>To complete this section, you must:</p>
+<ul class="simple">
+<li><p>Set up a version control system for your code</p></li>
+<li><p>Set up a version control system for your data</p></li>
+<li><p>Write a document about how they are to be used</p></li>
+</ul>
+<section id="id31">
+<h4>Examples<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="documentation">
+<span id="id32"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Documentation</span></a><a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>As with version control, good documentation is just as important, or perhaps
+even more so, as any other software development project. In this step we will
+explore:</p>
+<ul class="simple">
+<li><p>Documentation for the code and;</p></li>
+<li><p>Documentation for data</p></li>
+</ul>
+<p>Compared to many software engineering projects, AI projects can often suffer
+from large variances in behavior due to the stochastic nature of the algorithms
+involved. A consequence of this is that it is imperative to maintain clear
+documentation. We must be able to clearly distinguish between acceptable
+variances in behavior due to irreducible randomness in our processes, and
+unacceptable variances in behavior due to mistakes.</p>
+<p>Documentation should follow standard best practices. This is quite a large topic
+that has been extensively covered elsewhere (e.g. Write The Docs), that we won’t
+repeat in this guide. Instead, we devote this section to discussing the
+additional considerations required for documentation of data. Documentation for
+data serves not just a similar function to documentation for code in terms of
+bringing clarity and transparency to what has been done, but it also has a
+strong role in ensuring reproducibility. In many cases, and especially when
+dealing with challenging data (such as data involving human factors), how you
+went about collecting this data is just as important as what you ultimately
+collected. Ultimately, we suggest that documentation for data should consider
+the following three things:</p>
+<p><strong>What you collected</strong>. A good description should (if reasonable) include a way of
+positively identifying what was collected, where it was collected from and when.</p>
+<p><strong>How you collected it</strong>. A good description should both include a succinct high
+level description of what was done, and include enough detail to allow a full
+replication. Especially for complicated data collection paradigms, the devil is
+often in the details, and seemingly unimportant details can become important
+later.</p>
+<p><strong>Why you did it this way</strong>. Should both rationalize the process you took and,
+crucially, why you did this instead of other things. This gives important
+contextual hints to anyone trying to replicate your results that may be absent
+from a pure “how” description, and can help them avoid any problems you
+encountered in the process.</p>
+<p>To achieve this we suggest that:</p>
+<ul class="simple">
+<li><p>Each piece of data comes with metadata, describing what it is</p></li>
+<li><p>Each group of data should be accompanied by a short document describing how
+and why it was collected.</p></li>
+</ul>
+<p>This may sound like a significant overhead but, especially if your data is being
+collected digitally, the burden is not especially high. Populating metadata can
+often be significantly automated, and written documentation may overlap
+significantly with the existence and documentation of relevant code. For
+example, consider a dataset of images collected by a web scraper. It would be
+very easy to include a hash to positively identify what was collected, the web
+location it was collected from, and at what time during the scraping process. In
+respect of how this data was collected, the code for the webscraper itself
+provides a strong description of this. Even in respect of why it was done this
+way, the documentation for this code provides a significant amount of context.</p>
+<p>High AI Risk applications:</p>
+<ul class="simple">
+<li><p>For high AI risk applications, documentation is no longer an internally driven
+process to improve productivity, but a (likely mandated) part of the
+requirement to demonstrate traceability and auditability of the software</p></li>
+<li><p>High risk AI Applications must have human oversight. Automated documentation of
+data collection will require a level of human oversight and validation.</p></li>
+</ul>
+<p>The criteria to complete this step are:</p>
+<ul class="simple">
+<li><p>Creating documentation for all code written to this point, and standards for
+future code</p></li>
+<li><p>Creating documentation for any data collected to this point, and a process for
+documenting future data</p></li>
+</ul>
+<section id="id33">
+<h4>Examples<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="logging">
+<span id="id34"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Logging</span></a><a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<p>Logging is a core requirement of the software development process. It must be
+accepted that software will break or not fulfill its function correctly, and
+when it does we need to be able to diagnose those faults effectively.
+Furthermore, software is rarely static, and in order to change it we must
+understand how it works. Finally, in many cases we may wish (or be required) to
+audit and review our software, and logging is an important part of this. In this
+step, we will explore:</p>
+<ul class="simple">
+<li><p>How to create a logging process for out data collection</p></li>
+</ul>
+<p>When creating a logging process, the first question is always “What should we
+log?”. The best place to start with this is to instead start with the question
+“what questions do we want to answer about our software?”. Obviously, the answer
+to this will depend on the specifics of our data collection, but some recurring
+questions you will often need to answer are:</p>
+<ul class="simple">
+<li><p>Where did I get this piece of data?</p></li>
+<li><p>When did I get this piece of data?</p></li>
+<li><p>What was the state of my collection program when I collected this data?</p></li>
+<li><p>Was collecting this piece of data successful?</p></li>
+<li><p>Why was collecting this piece of data unsuccessful?</p></li>
+</ul>
+<p>For high AI Risk applications:</p>
+<ul class="simple">
+<li><p>For high AI risk applications, logging is no longer optional. Logging of all
+actions relevant to proving compliance with the EU AI Act (see appendix) must
+be undertaken.</p></li>
+</ul>
+<p>The criteria to complete this step are:</p>
+<ul class="simple">
+<li><p>Creating a logging process for all data collection code</p></li>
+</ul>
+</section>
+<section id="data-exploration">
+<span id="id35"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Data Exploration</span></a><a class="headerlink" href="#data-exploration" title="Permalink to this headline">¶</a></h3>
+<p>This step is separated from the Data Cleaning step for clarity, but in reality
+these two steps are likely to be quite closely linked together. In this step we
+will look at the process of exploring the data we collect.</p>
+<p>We discussed previously in the guide that you may wish to return to earlier
+steps, and this data exploration step is one of the steps which is likely to
+encourage this.</p>
+<p>In our steps so far we have designed an AI application, designed a dataset we
+think achieve our goals, and have taken the initial steps to ensure that there
+is a robust coding framework around this. Before going any further, we need to
+take a look at the data we have collected and try and understand it’s key
+characteristics, strengths, and weaknesses of the data to establish:</p>
+<ul class="simple">
+<li><p>An understanding of the the key characteristics, strengths, and weaknesses of
+the data</p></li>
+<li><p>What patterns and relationships exist in the data</p></li>
+<li><p>Whether it is likely to be useful for the purpose we intended</p></li>
+<li><p>What further data collection should fix, and what it should do more of</p></li>
+</ul>
+<p>While this initial examination obviously can’t understand the
+end result of our full AI pipeline ahead of time, we can build up an
+understanding of our data. It’s likely that, especially for the first time, our
+data may not be exactly as we had hoped it would be.</p>
+<p>Our data exploration process is  about trying to digest information about our
+dataset. The methods we use to do this are very fundamental, intuitive ideas:</p>
+<ul class="simple">
+<li><p>Looking directly at the data and subsets thereof</p></li>
+<li><p>Trying to understand the data in an intuitive visual way</p></li>
+<li><p>Trying to understand the data through summaries and heuristics</p></li>
+</ul>
+<p>The best approach for this will vary, but standard approaches for these are:
+* Tabular reports
+* Data Visualization
+* Data Profiling</p>
+<p><strong>Tabular reports.</strong> Forming tabular reports is a very simple way to look at our
+data directly. This is simply structuring our data set in a row/column format.
+There are no hard rules about how we might want to do this. We could look at
+subsets of the data, look at ordered columns, or anything else. Just looking at
+the raw data can often be very useful. We can check our intuitions about the
+data, identify potential patterns, and notice errors that may be hard to
+identify other ways.</p>
+<p><strong>Data Visualization.</strong> Directly examining data is useful in a way that should not
+be discarded. However, most of us will find it more useful to process data
+visually. There are a very large number of ways to do this. Edward Tuft lists a
+series of key ideas that are often cited for this:</p>
+<ul class="simple">
+<li><p>show the data</p></li>
+<li><p>induce the viewer to think about the substance rather than about methodology,
+graphic design, the technology of graphic production, or something else</p></li>
+<li><p>avoid distorting what the data has to say</p></li>
+<li><p>present many numbers in a small space</p></li>
+<li><p>make large data sets coherent</p></li>
+<li><p>encourage the eye to compare different pieces of data</p></li>
+<li><p>reveal the data at several levels of detail, from a broad overview to the
+fine structure</p></li>
+<li><p>serve a reasonably clear purpose: description, exploration, tabulation, or
+decoration</p></li>
+<li><p>be closely integrated with the statistical and verbal descriptions of a data
+set.</p></li>
+</ul>
+<p>Good visualizations are often as much of an art as a science. As with many
+things for which this is the case, the best initial approaches are as follows:</p>
+<ul class="simple">
+<li><p>Start from the basics, the simple tools that everyone else’s uses (line plot,
+scatter graphs, heatmaps)</p></li>
+<li><p>Unashamedly appropriate good idea from other people doing similar things</p></li>
+<li><p>Explore your own ideas to find out works for you and what doesn’t</p></li>
+</ul>
+<p><strong>Data Profiling.</strong> Data profiling tries to capture yet another approach to
+understanding our data, this time through the use of summarizations and
+statistics about our data.</p>
+<ul class="simple">
+<li><p>What groupings (or clusters) within in our data</p></li>
+<li><p>Averages (mean, median, etc.)</p></li>
+<li><p>Spreads (standard deviation, quartiles, etc.)</p></li>
+</ul>
+<p>As part of this we might want to explore how different bits of our data relate
+to each other. For example:</p>
+<ul class="simple">
+<li><p>Comparing different data</p></li>
+<li><p>Correlating different data</p></li>
+</ul>
+<p>Alongside these broad techniques, we might also choose to do a detailed
+“drilldown” into our data and run a more detailed analysis of some parts. We
+might look at some more advanced statistics or visualizations of these subsets,
+or even perform a small scale trial run of some AI approaches we are considering
+later.</p>
+<p>To criteria to complete this step is to:</p>
+<ul class="simple">
+<li><p>Create a data exploration process</p></li>
+<li><p>Create a data exploration report</p></li>
+</ul>
+</section>
+<section id="cleaning-your-data">
+<span id="id36"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Cleaning your Data</span></a><a class="headerlink" href="#cleaning-your-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="validation-and-testing">
+<span id="id37"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Validation and Testing</span></a><a class="headerlink" href="#validation-and-testing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling-and-automation-data-collection">
+<span id="id38"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Scaling and Automation: Data Collection</span></a><a class="headerlink" href="#scaling-and-automation-data-collection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling-and-automation-data-storage">
+<span id="id39"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Scaling and Automation: Data Storage</span></a><a class="headerlink" href="#scaling-and-automation-data-storage" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling-and-automation-data-access">
+<span id="id40"></span><h3><a class="reference internal" href="#collecting-data"><span class="std std-ref">Scaling and Automation: Data Access</span></a><a class="headerlink" href="#scaling-and-automation-data-access" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="training-your-ai-application-task-list">
+<span id="id41"></span><h2><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Training Your AI Application</span></a><a class="headerlink" href="#training-your-ai-application-task-list" title="Permalink to this headline">¶</a></h2>
+<section id="choosing-your-ai-approach">
+<span id="id42"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Choosing Your AI approach</span></a><a class="headerlink" href="#choosing-your-ai-approach" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="version-control-ci-cd-training">
+<span id="id43"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Version Control, CI/CD, Training</span></a><a class="headerlink" href="#version-control-ci-cd-training" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="documentation-and-logging-training">
+<span id="id44"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Documentation and Logging, Training</span></a><a class="headerlink" href="#documentation-and-logging-training" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-pre-processing">
+<span id="id45"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Data Pre-processing</span></a><a class="headerlink" href="#data-pre-processing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="training-infrastructure">
+<span id="id46"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Training Infrastructure</span></a><a class="headerlink" href="#training-infrastructure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-a-training-process">
+<span id="id47"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Creating a Training Process</span></a><a class="headerlink" href="#creating-a-training-process" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="testing-and-validation-training">
+<span id="id48"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Testing and Validation, Training</span></a><a class="headerlink" href="#testing-and-validation-training" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exploring-outcomes-and-biases">
+<span id="id49"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Exploring Outcomes and Biases</span></a><a class="headerlink" href="#exploring-outcomes-and-biases" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling-and-automation-training-pipeline">
+<span id="id50"></span><h3><a class="reference internal" href="#training-your-ai-application"><span class="std std-ref">Scaling and Automation: Training Pipeline</span></a><a class="headerlink" href="#scaling-and-automation-training-pipeline" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="deploying-your-ai-application-task-list">
+<span id="id51"></span><h2><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Deploying your AI Application</span></a><a class="headerlink" href="#deploying-your-ai-application-task-list" title="Permalink to this headline">¶</a></h2>
+<section id="version-control-ci-cd-deployment">
+<span id="id52"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Version Control, CI/CD, Deployment</span></a><a class="headerlink" href="#version-control-ci-cd-deployment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="documentation-and-logging-deployment">
+<span id="id53"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Documentation and Logging, Deployment</span></a><a class="headerlink" href="#documentation-and-logging-deployment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="preparing-a-trained-model">
+<span id="id54"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Preparing a Trained Model</span></a><a class="headerlink" href="#preparing-a-trained-model" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deployment-infrastructure">
+<span id="id55"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Deployment Infrastructure</span></a><a class="headerlink" href="#deployment-infrastructure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deploying-your-model">
+<span id="id56"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Deploying Your Model</span></a><a class="headerlink" href="#deploying-your-model" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="testing-and-validation-deployment">
+<span id="id57"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Testing and Validation, Deployment</span></a><a class="headerlink" href="#testing-and-validation-deployment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="model-monitoring">
+<span id="id58"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Model Monitoring</span></a><a class="headerlink" href="#model-monitoring" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scaling-and-automation-deployment-pipeline">
+<span id="id59"></span><h3><a class="reference internal" href="#deploying-your-ai-application"><span class="std std-ref">Scaling and Automation: Deployment Pipeline</span></a><a class="headerlink" href="#scaling-and-automation-deployment-pipeline" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id60">
+<span id="id61"></span><h2><a class="reference internal" href="#id60"><span class="std std-ref">Examples</span></a><a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
+<section id="example-engineering-document">
+<span id="example-engineering"></span><h3><a class="reference internal" href="#example-engineering"><span class="std std-ref">Example Engineering Document</span></a><a class="headerlink" href="#example-engineering-document" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-dataset-creation-document">
+<span id="dataset-creation"></span><h3><a class="reference internal" href="#dataset-creation"><span class="std std-ref">Example Dataset Creation Document</span></a><a class="headerlink" href="#example-dataset-creation-document" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="contributors">
+<span id="id62"></span><h1>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h1>
+<p>We thank all contributors and reviewers of this project.</p>
+<section id="authors-and-contributors">
+<h2>Authors and Contributors<a class="headerlink" href="#authors-and-contributors" title="Permalink to this headline">¶</a></h2>
+<p>Alex Wang</p>
+<p>Allison Lowndes</p>
+<p>Andrew Rogoyski</p>
+<p>Andy Bond</p>
+<p>Arezou Nayebi</p>
+<p>Charles Sturman</p>
+<p>Dimitra Georgiadou</p>
+<p>Elliot Stein</p>
+<p>Gopal Ramchurn</p>
+<p>James Watson</p>
+<p>Jeremy Bennett</p>
+<p>Lauren Thompson</p>
+<p>Mark Zwolinski</p>
+<p>Mike Bartley</p>
+<p>Prethveraj M S</p>
+<p>Tim Santos</p>
+<p>William Jones</p>
+</section>
+<section id="reviewers">
+<h2>Reviewers<a class="headerlink" href="#reviewers" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Welcome to the Techworks Best Practices in AI Guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.1.
+    </div>
+  </body>
+</html>
