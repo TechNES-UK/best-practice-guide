@@ -14,17 +14,11 @@ Machine Learning (ML) for electronic systems engineers in the UK. It aims to
 help electronic system engineers to navigate these fields and to
 transfer their highly relevant skill-sets into these important domains.
 
-This guide is being actively developed in the open by Techworks, and we welcome
-external contributors. While this is primarily a guide for engineers, we
-recognize the importance of a diverse skill-set and opinions in our working
-group. If you think your experience is relevant to the guide we are producing,
-please consider getting involved.
-
-This document is available in three formats:
-
-* `Online <https://techworkshub.github.io/best-practice-guide>`_
-* `PDF <https://raw.githubusercontent.com/techworkshub/best-practice-guide/gh-pages/best-practices-guide.pdf>`_
-* `docx <https://github.com/techworkshub/best-practice-guide/raw/gh-pages/best-practices-guide.docx>`_
+This guide is being developed openly by Techworks, and we welcome external
+contributors. While this is primarily a guide for engineers, we recognize the
+importance of a diverse skill-set and opinions in our working group. If you
+think your experience is relevant to the guide we are producing, please consider
+getting involved.
 
 
 Getting Involved
@@ -92,9 +86,6 @@ Prethveraj M S
 Tim Santos
 
 William Jones
-
-.. The addition of this section is a bit of a hack to get Sphinx to play nicely
- .. with different title levels in the pdf and doc versions
 
 Best Practice Guide
 ===================
